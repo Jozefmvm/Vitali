@@ -27,10 +27,8 @@ async function getRandomAsync(){
     await first;
     await second;
     await third;
-    Promise.race([first, second, third])
-    .then(data => {
-        console.log(data);
-    })
+    console.log(Promise.race([first, second, third]));
+      
     
 }
 getRandomAsync()
