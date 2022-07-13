@@ -1,0 +1,21 @@
+{
+  "name": "lesson14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc --build --clean && npx tsc",
+    "lint": "eslint --debug ./ --fix",
+    "lint:write": "npx  pretty && eslint ./ --fix",
+    "pretty": "prettier --write ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": "^8.19.0",
+    "typescript": "^4.7.4"
+  }
+}
