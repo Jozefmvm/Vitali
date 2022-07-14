@@ -38,10 +38,10 @@ describe('Check funtion multiply in calculator - equal number', function(){
     })
 })
 
-//Специальная проверка на некорректный результат - должен фэйлиться
+
 describe('Check funtion multiply in calculator - not correct result', function(){
     it ('should be failed', async() => {
-        expect(typeof calculator.multiply(3,4)).toEqual(34);
+        expect(typeof calculator.multiply('str',4)).not.toEqual('number');
     })
 })
 
@@ -49,14 +49,6 @@ describe('Check funtion multiply in calculator - not correct result', function()
 describe('Check funtion multiply in calculator - result', function(){
     it ('should be number', async() => {
         expect(calculator.multiply(3,4)).toEqual(12);
-    })
-})
-
-
-// Специальная проверка на некорректный результат- должен фэйлиться.
-describe('Check funtion multiply in calculator - not correct result', function(){
-    it ('should be failed', async() => {
-        expect(calculator.multiply(3,4)).toEqual(15);
     })
 })
 
