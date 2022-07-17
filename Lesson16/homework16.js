@@ -11,6 +11,11 @@
 // 6 - новости блоком
 
 class locatorsXpath{
-    elementWithPicture = 
-
+    
+    let elementWithPicture =//div[@class="media media--hero media--primary media--overlay block-link"]
+    let elementTopMenu = //nav[@class="orbit-header-links international"]
+    let elementFirstVisible = //nav[@class="orbit-header-links international"]//li[position()=1]
+    let elementLastVisible = //nav[@class="orbit-header-links international"]//li[last()]
+    let elemetNotDivisibleByTwo = //nav[@class="orbit-header-links international"]//li[position() mod 2 != 0]
+    
 }
