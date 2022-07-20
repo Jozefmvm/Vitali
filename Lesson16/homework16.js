@@ -30,8 +30,9 @@ let elemetNotDivisibleByTwoCss = 'nav.orbit-header-links.international>ul>li:nth
 
 // 3 - дата
 // возможно нужны действия какие то для получения даты
-let dataofDayCss = 'section.module.module--header>h2';
-let dataofDayXpath = '//section[@class="module module--header"]/h2'
+
+let dataofDayXpath = '//section[@class="module module--header"]/h2/text()';
+let secondvariantdataofDayXpath = '//*[@class="module module--header"]//*[@class="module__title"]/text()';
 
 
 // 4 - кликабельный элемент поиска
