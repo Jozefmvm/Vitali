@@ -11,7 +11,14 @@ const {Builder, By, Key} = require('selenium-webdriver');
 
 const { expect } = require ('chai')
 
-const driver = new Builder().forBrowser('chrome').build();
+
+
+
+
+describe('Test site of chromdriver', function(){
+
+
+    const driver = new Builder().forBrowser('chrome').build();
 
 
 before (async() => {
@@ -22,11 +29,6 @@ after (async() =>{
     driver.close();
 })
 
-
-
-// Title одинаковый на всех страница и я решил, что речь и главной надписи т.к. она меняется при переключениях по сайту.
-
-describe('Test site of chromdriver', function(){
 
     it('Go to the site and check major text of page', async() => {
         await driver.get('https://chromedriver.chromium.org/home');
