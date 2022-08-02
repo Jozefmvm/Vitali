@@ -1,6 +1,5 @@
 const { BasePage } = require('../BasePage');
 const { BaseElement } = require('../../helpers/BaseElements');
-const { default: $ } = require('webdriverio/build/commands/element/$');
 
 const baseElement = new BaseElement();
 
@@ -12,30 +11,37 @@ class Header extends BasePage {
         this.headerContributeLink = "//*[@class='navbar__item navbar__link' and @href='/docs/contribute']";
         this.headerBlogLink = "//*[@class='navbar__item navbar__link' and @href='/blog']";
         this.headerCommunityLink = "//*[@class='navbar__item navbar__link' and @href='/community/support']";
-        this.headerActiveLink = ".navbar__item.navbar__link.navbar__link--active";
+        this.headerActiveLinkDoc = "//*[@class='navbar__item navbar__link navbar__link--active' and @href='/docs/gettingstarted']";
+        this.headerActiveLinkApi = "//*[@class='navbar__item navbar__link navbar__link--active' and @href='/docs/api']";
+        this.headerActiveLinkContribute = "//*[@class='navbar__item navbar__link navbar__link--active' and @href='/docs/contribute']"
+        this.headerActiveLinkCommunity = "//*[@class='navbar__item navbar__link navbar__link--active' and @href='/community/support']"
+
 
     }
 
     async goToHeaderLinks(selector){
         await baseElement.get(selector);
         await baseElement.click();
+        await browser.pause(3000);
     }
 
 
-    async checkEnabledActivElementAfterClick(selector){
+    async checkEnabledActivElementAfterClick(selector, activeSelector){
+        await browser.pause(3000);
         await baseElement.get(selector);
         await baseElement.click();
-        await browser.pause(2000);
-        return browser.$(this.headerActiveLink).isEnabled()
+        await browser.pause(3000);
+        return $(activeSelector).isEnabled();
     }
 
-// it's really difficult for me...  may be i can solve it
-    // async getColorButton(selector, activeselector) {
-    //     await browser.pause(3000);
-    //     await baseElement.get(selector);
-    //     await baseElement.click();
-    //     return $(activeselector).getCSSProperty('color')
-    // }
+
+    async getColorButton(selector, activeSelector) {
+        await browser.pause(3000);
+        await baseElement.get(selector);
+        await baseElement.click();
+        await browser.pause(3000);
+        return $(activeSelector).getCSSProperty('color');
+    }
 
 
 }

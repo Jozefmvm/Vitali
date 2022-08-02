@@ -1,8 +1,6 @@
 const { BasePage } = require('../pageobjects/BasePage');
-// const { BaseElement } = require('../../helpers/BaseElements');
-const { default: $ } = require('webdriverio/build/commands/element/$');
 
-// const baseElement = new BaseElement();
+
 
 class FirstPage extends BasePage{
     constructor(){

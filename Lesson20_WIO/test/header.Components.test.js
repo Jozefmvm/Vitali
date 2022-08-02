@@ -8,7 +8,7 @@ const mainPage = new MainPage();
 const header = new Header();
 
 
-describe('Chec header components on page of WebdriverIO (titles)', function() {
+describe('Chec header components on page of WebdriverIO', function() {
 
     before('maximizeWindow and timeout', async () => {
         await mainPage.navigate('https://webdriver.io/');
@@ -38,28 +38,42 @@ describe('Chec header components on page of WebdriverIO (titles)', function() {
 
 
     it ("Check enabled element after click Docs", async() => {
-        const a = await header.checkEnabledActivElementAfterClick(header.headerDocsLink)
+        const a = await header.checkEnabledActivElementAfterClick(header.headerDocsLink, header.headerActiveLinkDoc)
         expect(a).toEqual(true)
     })
 
 
     it ("Check enabled element after click Api", async() => {
-        const a = await header.checkEnabledActivElementAfterClick(header.headerApiLink)
+        const a = await header.checkEnabledActivElementAfterClick(header.headerApiLink, header.headerActiveLinkApi)
         expect(a).toEqual(true)
     })
 
 
     it ("Check enabled element after click Community", async() => {
-        const a = await header.checkEnabledActivElementAfterClick(header.headerCommunityLink)
+        const a = await header.checkEnabledActivElementAfterClick(header.headerCommunityLink, header.headerActiveLinkCommunity)
         expect(a).toEqual(true)
     })
 
-    //trouble from header .js
-    // it('CSSS', async() => {
-    //     await browser.pause(2000)
-    //     const a = await header.getColorButton(header.headerDocsLink, header.headerActiveLink)
-    //     expect(a).toEqual("")
-    // })
+
+    it('Check color button after click on the Docs button', async() => {
+        await browser.pause(2000)
+        const a = await header.getColorButton(header.headerDocsLink, header.headerActiveLinkDoc)
+        expect(a.value).toEqual("rgba(234,89,6,1)")
+    })
+
+
+    it('Check color button after click on the Api button', async() => {
+        await browser.pause(2000)
+        const a = await header.getColorButton(header.headerApiLink, header.headerActiveLinkApi)
+        expect(a.value).toEqual("rgba(234,89,6,1)")
+    })
+
+
+    it('Check color button after click on the Contribute button', async() => {
+        await browser.pause(2000)
+        const a = await header.getColorButton(header.headerContributeLink, header.headerActiveLinkContribute)
+        expect(a.value).toEqual("rgba(234,89,6,1)")
+    })
 
 
 
