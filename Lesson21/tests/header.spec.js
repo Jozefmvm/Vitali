@@ -35,7 +35,7 @@ test.describe('Check header of site of Playwright', () => {
         await expect(DocsLinkActive).toHaveCSS('color', 'rgb(26, 126, 31)');
     })
 
-    test ('Check Community link color before click and after click', async({ page }) => {
+    test ('Check Community link color before click and  after click', async({ page }) => {
         const DocsLink = page.locator(header.headerCommunityLink);
         await expect(DocsLink).toHaveCSS('color', 'rgb(28, 30, 33)');
         await DocsLink.click();
