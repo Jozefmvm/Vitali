@@ -12,7 +12,7 @@ test.describe('Check header of site of Playwright', () => {
     });
 
 
-    test ('Check text of link (playwright) on the header', async({ page }) => {
+    test ('Check text of link (playwright) on the header ', async({ page }) => {
         const headerPlaywright =  page.locator(header.headerPlaywrightLink);
         await expect(headerPlaywright).toHaveText('Playwright');
     })
